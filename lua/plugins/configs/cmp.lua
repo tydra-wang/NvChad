@@ -1,4 +1,4 @@
-vim.o.completeopt = "menuone,noselect"
+vim.opt.completeopt = "menuone,noselect"
 
 local lspkind = require "lspkind"
 local luasnip = require "luasnip"
