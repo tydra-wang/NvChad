@@ -5,7 +5,7 @@ M.ui, M.options, M.plugin_status, M.mappings, M.custom = {}, {}, {}, {}, {}
 
 -- non plugin ui configs, available without any plugins
 M.ui = {
-   italic_comments = false,
+   italic_comments = true,
 
    -- theme to be used, to see all available themes, open the theme switcher by <leader> + th
    theme = "onedark",
@@ -53,10 +53,10 @@ M.options = {
    -- relative numbers in normal mode tool at the bottom of options.lua
    numberwidth = 2,
    permanent_undo = true,
-   shiftwidth = 2,
+   shiftwidth = 4,
    smartindent = true,
-   tabstop = 8, -- Number of spaces that a <Tab> in the file counts for
-   timeoutlen = 400,
+   tabstop = 4, -- Number of spaces that a <Tab> in the file counts for
+   timeoutlen = 700,
    relativenumber = false,
    ruler = false,
    updatetime = 250,
@@ -80,8 +80,8 @@ M.plugin_status = {
    cheatsheet = true, -- fuzzy search your commands/keymappings
    colorizer = true,
    comment = true, -- universal commentor
-   dashboard = false, -- a nice looking dashboard
-   esc_insertmode = true, -- escape from insert mode using custom keys
+   dashboard = true, -- a nice looking dashboard
+   esc_insertmode = false, -- escape from insert mode using custom keys
    feline = true, -- statusline
    gitsigns = true, -- gitsigns in statusline
    lspsignature = true, -- lsp enhancements
@@ -89,7 +89,7 @@ M.plugin_status = {
    neoscroll = true, -- smooth scroll
    telescope_media = false, -- see media files in telescope picker
    truezen = false, -- no distraction mode for nvim
-   vim_fugitive = false, -- git in nvim
+   vim_fugitive = true, -- git in nvim
    vim_matchup = true, -- % magic, match it but improved
 }
 

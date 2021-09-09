@@ -69,6 +69,16 @@ for _, lsp in ipairs(servers) do
    }
 end
 
+nvim_lsp.gopls.setup {
+   cmd = {'gopls', '--remote=auto'},
+   on_attach = on_attach,
+   capabilities = capabilities,
+   -- root_dir = vim.loop.cwd,
+   flags = {
+      debounce_text_changes = 150,
+   },
+}
+
 -- require("anyfile").setup_luaLsp(on_attach, capabilities) -- this will be removed soon after the custom hooks PR
 
 -- replace the default lsp diagnostic symbols

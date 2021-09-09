@@ -9,6 +9,11 @@ local use = packer.use
 return packer.startup(function()
    local plugin_status = require("core.utils").load_config().plugin_status
 
+   use 'easymotion/vim-easymotion'
+   -- use 'liuchengxu/vista.vim'
+   use 'fatih/vim-go'
+   use 'preservim/tagbar'
+
    -- this is arranged on the basis of when a plugin starts
 
    -- this is the nvchad core repo containing utilities for some features like theme swticher, no need to lazy load
