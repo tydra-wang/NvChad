@@ -78,7 +78,7 @@ M.misc = function()
       map("n", maps.close_buffer, ":lua require('core.utils').close_buffer() <CR>") -- close  buffer
       map("n", maps.copy_whole_file, ":%y+ <CR>") -- copy whole file content
       map("n", maps.new_buffer, ":enew <CR>") -- new buffer
-      map("n", maps.new_tab, ":tabnew <CR>") -- new tabs
+      -- map("n", maps.new_tab, ":tabnew <CR>") -- new tabs
       map("n", maps.line_number_toggle, ":set nu! <CR>") -- toggle numbers
       map("n", maps.save_file, ":w <CR>") -- ctrl + s to save file
 
@@ -109,7 +109,7 @@ M.misc = function()
       cmd "silent! command! NvChadUpdate lua require('nvchad').update_nvchad()"
       map("n", maps.update_nvchad, ":NvChadUpdate <CR>")
 
-      -- add ChadReload command and maping
+      -- add ChadReload command and mapping
       -- cmd "silent! command! NvChadReload lua require('nvchad').reload_config()"
    end
 
@@ -137,7 +137,8 @@ end
 M.dashboard = function()
    local m = plugin_maps.dashboard
 
-   map("n", m.bookmarks, ":DashboardJumpMarks <CR>")
+   map("n", m.bookmarks, ":Telescope marks <CR>")
+   -- map("n", m.bookmarks, ":DashboardJumpMarks <CR>")
    map("n", m.new_file, ":DashboardNewFile <CR>")
    map("n", m.open, ":Dashboard <CR>")
    map("n", m.session_load, ":SessionLoad <CR>")
