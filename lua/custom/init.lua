@@ -40,6 +40,7 @@ hooks.add("install_plugins", function(use)
          vim.g.go_doc_keywordprg_enabled = 0
       end
    }
+   use 'buoto/gotests-vim'
    use {
       'preservim/tagbar',
    }
