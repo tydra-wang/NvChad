@@ -14,18 +14,16 @@ vim.cmd [[ autocmd Filetype go setlocal noexpandtab ]]
 -- https://github.com/akinsho/bufferline.nvim/issues/176
 vim.cmd [[ autocmd Filetype qf setlocal nobuflisted ]]
 
-local hooks = require "core.hooks"
+local map = require("core.utils").map
 
--- mappings
-hooks.add("setup_mappings", function(map)
-   map("n", "<leader><leader>", "<Plug>(easymotion-overwin-f2)", { noremap = false })
-   map("n", "gn", "<cmd>lua require'illuminate'.next_reference{wrap=true}<cr>")
-   map("n", "gp", "<cmd>lua require'illuminate'.next_reference{wrap=true, reverse=true}<cr>")
-   map("n", "<leader><tab>", ":BufferLinePick <CR>")
-end)
+map("n", "<leader><leader>", "<Plug>(easymotion-overwin-f2)", { noremap = false })
+map("n", "gn", "<cmd>lua require'illuminate'.next_reference{wrap=true}<cr>")
+map("n", "gp", "<cmd>lua require'illuminate'.next_reference{wrap=true, reverse=true}<cr>")
+map("n", "<leader><tab>", ":BufferLinePick <CR>")
 
--- plugins
-hooks.add("install_plugins", function(use)
+local customPlugins = require "core.customPlugins"
+
+customPlugins.add(function(use)
    use {
       'easymotion/vim-easymotion',
       config = function()
