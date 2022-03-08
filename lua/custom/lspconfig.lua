@@ -17,6 +17,14 @@ M.setup_lsp = function(attach, capabilities)
       cmd = { "gopls", "--remote=auto" },
    }
 
+   lspconfig.rust_analyzer.setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      flags = {
+         debounce_text_changes = 150,
+      },
+   }
+
    lsp_installer.on_server_ready(function(server)
       local opts = {
          on_attach = on_attach,
